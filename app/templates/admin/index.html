@@ -1,0 +1,21 @@
+{% extends 'admin/master.html'%}
+
+{% block body %}
+    {% if current_user.is_authenticated %}
+    <header id="header">
+				<div class="inner">
+					<nav id="nav">
+						<span>Admin: {{current_user.name}}</span>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h1>Welcome to V-League </h1>
+			</section>
+    {% else %}
+        {% include 'admin/login.html' %}
+    {% endif %}
+{% endblock %}
