@@ -21,7 +21,10 @@ class Team(db.Model):
     __tablename__ = "team"
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(50), nullable=False)
+    homestadium = Column(String(50), nullable=False)
+    image = Column(String(100))
     players = relationship('Player', backref='team', lazy=True)
+
     def __str__(self):
         return self.name
 
@@ -33,7 +36,11 @@ class Player(db.Model):
     national = Column(String(50), nullable=False)
     dayofbirth = Column(DateTime, nullable=False)
     type = Column(String(50), nullable=False)
-    note = Column(String(100), nullable=True)
+    position = Column(String(50), nullable=False)
+    height = Column(String(50), nullable=False)
+    weight = Column(String(50), nullable=False)
+    image = Column(String(100))
+    note = Column(String(100))
     team_id = Column(Integer, ForeignKey('team.id'), nullable=False)
 
     def __str__(self):
