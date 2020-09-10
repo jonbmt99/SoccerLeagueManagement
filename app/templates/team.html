@@ -11,7 +11,7 @@
                 <ul class="galleryPage gallerycolumn03 clearfix" id=da_gallery>
                     {% for team in teamList %}
 <!--                        <h4 class="text-center">{{team.name}}</h4>-->
-                        <li class=gallery-list><a class=column_g>
+                        <li class=gallery-list><a href="/team-detail?teamId={{team.id}}" class=column_g>
                             <span class=image_g  style="margin:auto; height:200px; width:200px !important;background:url('{{ team.image }}')"></span>
                             <div class=gallery-info><h4>{{team.name}}</h4>
                                 <p></p></div>

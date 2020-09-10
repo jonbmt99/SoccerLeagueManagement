@@ -1,0 +1,53 @@
+{% extends 'base/master.html' %}
+{% block body %}
+    <div class=innerbannerwrap>
+        <div class=content></div>
+        <div class=innerbanner><h2 class=bannerHeadline><span>Lịch thi đấu và kết quả</span></h2></div>
+    </div>
+    <div class="container">
+        <form style="margin-top: 20px">
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col-lg-5">
+                        <select class="form-control" aria-label="Search" name="round[]">
+                            <option>Tất cả vòng đấu</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-5">
+                        <select class="form-control" aria-label="Search" name="team[]">
+                            <option>Tất cả câu lạc bộ</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="form-control" type="submit">Tìm kiếm</button>
+                    </div>
+                </div>
+            </form>
+        {% for i in '1234' %}
+            <div class="matches">
+            <div style="background-color: #e61d1e; color: #fff; font-size:20px; margin-top:20px" class="text-center">Vòng đấu 1</div>
+            <div class="matchday-wraper row">
+                <div class="col-lg-2">
+                    Ngày thi đấu
+                </div>
+                <div class="col-lg-10">
+                    <table class="table table-striped" style="background-color: #e3e3e3; margin-bottom:">
+                        {% for i in '123' %}
+                          <tbody>
+                            <tr>
+                                <td>Gio thi dau</td>
+                                <td>Svd</td>
+                                <td>Doi chu nha</td>
+                                <td>Logo</td>
+                                <td>Ti so</td>
+                                <td>Doi Khach</td>
+                                <td>Logo</td>
+                            </tr>
+                          </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

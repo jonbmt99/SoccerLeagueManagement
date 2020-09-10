@@ -6,39 +6,37 @@
     </div>
     <section class=matchSchedule>
         <div class=container>
-                <table class="table table-striped">
+            <form>
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col-lg-6">
+                        <input class="form-control" type="text" placeholder="Tìm kiếm theo tên" aria-label="Search" name="keyword">
+                    </div>
+                    <div class="col-lg-4">
+                        <input class="form-control" type="text" placeholder="Tìm kiếm theo vị trí" aria-label="Search" name="position">
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="form-control" type="submit">Tìm kiếm</button>
+                    </div>
+                </div>
+            </form>
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th scope="col">Tên</th>
-                  <th scope="col">Số áo</th>
-                  <th scope="col">Cao</th>
-                  <th scope="col">Cân nặng</th>
+                  <th scope="col">Cao (cm)</th>
+                  <th scope="col">Cân nặng (kg)</th>
                     <th scope="col">Vị trí</th>
-                    <th scope="col">Vị trí</th>
-                    <th scope="col">Vị trí</th>
-                    <th scope="col">Vị trí</th>
-
                 </tr>
               </thead>
               <tbody>
+                 {% for player in playerList %}
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <th scope="row">{{player.name}}</th>
+                  <td>{{player.height}}</td>
+                  <td>{{player.weight}}</td>
+                  <td>{{player.position}}</td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
+                 {% endfor %}
               </tbody>
             </table>
         </div>
