@@ -1,0 +1,74 @@
+{% extends 'base/master.html' %}
+{% block body %}
+    <div class=innerbannerwrap>
+        <div class=content></div>
+        <div class=innerbanner><h2 class=bannerHeadline><span>Mua vé</span></h2></div>
+    </div>
+<section class="innerpage_all_wrap bg-white">
+        <div class=container>
+            <div class=row><h2 class=heading>V-League <span>Mua vé chính thức</span></h2>
+
+                <div class=innerWrapper>
+                    <aside class="widgetinner clearfix">
+                        <div class=widgetinfowrap>
+                            <div class=bg-blackimg style="color:black">Mua vé Online</div>
+                            <ul class="widgetinfo info01">
+                                <li>100% Uy tín</li>
+                                <li>Thời gian thực tế</li>
+                                <li>Chăm sóc khách hàng thân thiện</li>
+                                <li>Bảo mật thanh toán</li>
+                                <li>Tiết kiệm thời gian</li>
+                                <li>7 năm kinh nghiệm</li>
+                            </ul>
+                            <a href=# class=blacklrnmore>Tìm hiểu thêm</a></div>
+                        <div class=widgetinfowrap>
+                            <div class=bg-blackimg style="color:black">Vé mùa đội bóng</div>
+                            <ul class="widgetinfo info02">
+                                <li>liverpool ticket</li>
+                                <li>arsenasl ticket</li>
+                                <li>ticket 03</li>
+                                <li>ticket 04</li>
+                            </ul>
+                            <a href=# class=blacklrnmore>Tìm hiểu thêm</a></div>
+                    </aside>
+                    <aside class=contentinner>
+                        <div class="bg-red headline01" style="color:black">Vé trận đấu phổ biến</div>
+                        <ul class=ticketInfo>
+                            {% for i in '123456789' %}
+                                <li>
+                                    <ul class="t_info headline01 clearfix">
+                                        <li>{{i}}</li>
+                                        <li>
+                                            <div class="headline01 clearfix"><span>FC Red Xpress</span><span
+                                                    class=vs>vs</span> <span>fc Hot Hawks</span></div>
+                                            <div class="ticketInner_info paragraph02 clearfix"><span>August 24,2015</span>
+                                                <span>18.25pm</span> <span class=capitalize01>Antigua Recreation</span>
+                                            </div>
+                                        </li>
+                                        <li><a href=# class="btn-small01 btn-green">book tickets</a></li>
+                                    </ul>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class=buymatchticket>
+                            <div class=bg-red><h5 style="color:black">Hướng dẫn mua vé</h5></div>
+                            <div class=ticktbody><p>Cách thức mua vé:
+
+                                Để mua vé các trận đấu vòng loại thứ hai World Cup 2022 bảng G, khách hàng chỉ cần tải hoặc cập nhật ứng dụng VinID trên nền tảng IOS hoặc Android, mở tính năng “Mua Vé”,
+                                lựa chọn trận đấu bạn quan tâm, sau đó chọn hạng vé và số lượng để thanh toán bằng ví điện tử hoặc cổng thanh toán Napas. </p>
+
+                                <div class=socialTicket><a href=https://www.facebook.com/templatespoint.net
+                                                           class="social_link facebook"><i
+                                        class="fa fa-facebook"></i></a> <a href=https://twitter.com/
+                                                                           class="social_link twitter"><i
+                                        class="fa fa-twitter"></i></a> <a href=https://www.behance.net/
+                                                                          class="social_link behance"><i
+                                        class="fa fa-behance"></i></a></div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
