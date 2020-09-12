@@ -1,6 +1,5 @@
 from app import app
 import secrets
-from PIL import Image
 import json
 import os
 import urllib.request
