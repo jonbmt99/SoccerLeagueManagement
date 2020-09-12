@@ -1,0 +1,32 @@
+
+				<div class="wrap-table-shopping-cart bgwhite">
+					<table class="table-shopping-cart">
+						<tr class="table-head">
+							<th class="column-1"></th>
+							<th class="column-2">Product</th>
+							<th class="column-3">Price</th>
+							<th class="column-4 p-l-70">Quantity</th>
+						</tr>
+						{% for row in productsincart %}
+						<tr class="table-row">
+							<td class="column-1">
+								<div class="cart-img-product b-rad-4 o-f-hidden">
+                                    {{ row[1] }}
+								</div>
+							</td>
+							<td class="column-2">{{row[2]}}</td>
+                            <span width="20px"></span>
+							<td class="column-3">${{row[4]}}</td>
+
+							<td class="column-4">
+									<input class="size8 m-text18 t-center num-product" type="number" name="num-product1" value="{{row[3]}}" disabled>
+                                    <a href="/removeFromCart?productId={{row[1]}}"/>Remove Product
+							</td>
+						</tr>
+                    {% endfor %}
+					</table>
+				</div>
+                TotalSum: {{ totalsum }}
+
+                <a href="/checkoutPage"><p style="color: #d58512">CheckOut</p></a>
+			</div>
