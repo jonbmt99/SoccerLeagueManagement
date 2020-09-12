@@ -8,6 +8,9 @@ app.secret_key = "\xa7#QV\x00\xb5rOf\x90P\xde@y\xb0\xa7"
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:Password123@localhost/soccerleaguemanagement?charset=utf8mb4"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 
+app.config['partnerCode'] = "MOMOY1ZA20200907"
+app.config["accessKey"] = "rVuWIV2U6YHmb803"
+app.config["secretKey"] = "EQeEkD4sirbclirmqPv5qXDrcLu2h5EZ"
 db = SQLAlchemy(app=app)
 
 admin = Admin(app=app, name="Quan ly giai dau bong da", template_mode="bootstrap3")

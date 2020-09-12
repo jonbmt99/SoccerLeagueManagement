@@ -1,0 +1,26 @@
+<div id="display">
+	<div id="productName">
+		<h1>{{data.product_name}}</h1>
+	</div>
+
+	<div id="productDescription">
+		<h2>Details</h2>
+		<table id="descriptionTable">
+			<tr>
+				<td>Name</td>
+                <td>{{ data.product_name }}</td>
+			</tr>
+			<tr>
+				<td>Regular Price</td>
+				<td>$ {{data.regular_price}}</td>
+			</tr>
+			<tr>
+				<td>Stock</td>
+				<td>{{data.quantity}}</td>
+			</tr>
+		</table>
+	</div>
+	<div id="addToCart">
+		<a href="/addToCart?productId={{request.args.get('productId')}}">Add to Cart</a>
+	</div>
+</div>
