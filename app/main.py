@@ -29,8 +29,15 @@ def players():
 def payment():
     return render_template("payment.html", resss=dao.payment_momo())
 
+@app.route("/rule")
+def rules():
+    return  render_template("rule.html")
 
-@app.route("/registerationForm")
+@app.route("/score")
+def scores():
+    return render_template("score.html", list_player_and_score= dao.total_score_by_players())
+
+@app.route("/registeractionForm")
 def registration_form():
     return render_template("register.html")
 

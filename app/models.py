@@ -62,7 +62,7 @@ class Match(db.Model):
     round_id = Column(Integer, ForeignKey('round.id'), nullable=False)
 
     def __str__(self):
-        return self.name
+        return str(self.id)
 
 
 class Score(db.Model):
@@ -93,7 +93,7 @@ class TypeOfScore(db.Model):
 class Round(db.Model):
     __tablename__ = "round"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(Integer, nullable=False)
+    name = Column(String(50), nullable=False)
     matches = relationship('Match', backref='round', lazy=True)
 
     def __str__(self):

@@ -93,6 +93,7 @@ def getusercartdetails():
     totalsum = 0
 
     for row in productsincart:
+        print(row)
         totalsum += row[4] * row[3]
 
 

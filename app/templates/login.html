@@ -1,6 +1,23 @@
-<form action="/login" method="POST">
-	<p>Email: <input type="text" name="email"></p>
-	<p>Password: <input type="password" name="password"></p>
-	<p><input type="submit"></p>
-	<a href="/registerationForm">Register here</a>
-</form>
+{% extends 'base/master.html' %}
+{% block body %}
+	<div class=innerbannerwrap>
+        <div class=content></div>
+        <div class=innerbanner><h2 class=bannerHeadline><span>Đăng nhập</span></h2></div>
+    </div>
+	<div class="container" style="width: 50%">
+		<form action="/login" method="POST">
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label>
+				<input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+			  </div>
+			  <div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			  </div>
+  			<button type="submit" style="color:black" class="btn btn-primary">Đăng nhập</button>
+			<button type="submit" class="btn btn-primary"><a style="color:black" href="/registeractionForm">Đăng kí</a></button>
+		</form>
+	</div>
+{% endblock %}
+
+

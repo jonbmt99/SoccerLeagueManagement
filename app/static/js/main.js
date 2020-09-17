@@ -746,103 +746,103 @@ $(document).ready(function () {
 
     /*--------------- Cart Features  ------------------*/
 
-    var $cartitems = JSON.parse(sessionStorage.getItem('cartItems')) || [],
-        $cartquantity = $cartitems.length,
-        $cartTotal = 0;
-
-    function getCartLength(){
-        $cartquantity = $cartitems.length;
-        $('.cartitems').html($cartquantity);
-    }
-
-    function updateSession(){
-        getCartLength();
-        sessionStorage.setItem('cartQuantity', $cartquantity);
-        sessionStorage.setItem('cartItems', JSON.stringify($cartitems));
-    }
-
-    function addToCart(data){
-        if(!data){
-            return;
-        }
-        var check = true;
-
-        for(var i = 0; i < $cartquantity; i++){
-            if(data.id === $cartitems[i].id){
-                check = false;
-                $cartitems[i].quantity = $cartitems[i].quantity + 1;
-                break;
-            }
-        }
-
-        if(check){
-            $cartitems.push(data);
-            getCartLength();
-
-            $('.cartitems').html($cartquantity);
-        }
-
-        updateSession();
-    }
-
-    function removeProduct(id, that){
-        var check;
-        for(var i = 0; i < $cartquantity; i++){
-            if(id === $cartitems[i].id){
-                $cartitems.splice(i, 1);
-                break;
-            }
-        }
-
-        that.parents('li').slideToggle().remove();
-        getCartLength();
-        updateTotal();
-        updateSession();
-        if($cartquantity === 0){
-            updatehtml();
-        }
-    }
-
-    function updateTotal(){
-        //Dont total if page does not have carttotal
-        if($('#carttotal').length){
-            $cartTotal = 0;
-            for(var i = 0; i < $cartquantity; i++){
-                $cartTotal += ($cartitems[i].price * $cartitems[i].quantity);
-            }
-            $('#carttotal').html('$ ' + $cartTotal);
-        }
-    }
-
-    function updatehtml(){
-        var html = '';
-        if($('#cartItems').length){
-            for(var i = 0; i < $cartquantity; i++){
-                html += updatetpl($cartitems[i].image, $cartitems[i].name, $cartitems[i].price, $cartitems[i].quantity, $cartitems[i].id, 1);
-            }
-            if(html === ''){
-                html = '<div class="clearfix">' + 
-                        '<div class="big-content">' + 
-                          '<div class="product-cart-wrap">' + 
-                            '<h5>Sorry, you do not have any product in cart.</h5>' + 
-                          '</div></div></div>';
-            }
-            $('#cartItems').html(html);
-        }
-        else if($('#cartItemsType2').length){
-            for(var i = 0; i < $cartquantity; i++){
-                html += updatetpl($cartitems[i].image, $cartitems[i].name, $cartitems[i].price, $cartitems[i].quantity, $cartitems[i].id, 2);
-            }
-            if(html === ''){
-                html = '<div class="clearfix">' + 
-                        '<div class="big-content">' + 
-                          '<div class="product-cart-wrap">' + 
-                            '<h5>Sorry, you do not have any product in cart.</h5>' + 
-                          '</div></div></div>';
-            }
-            $('#cartItemsType2').html(html);
-        }
-    }
+//    var $cartitems = JSON.parse(sessionStorage.getItem('cartItems')) || [],
+//        $cartquantity = $cartitems.length,
+//        $cartTotal = 0;
+//
+//    function getCartLength(){
+//        $cartquantity = $cartitems.length;
+//        $('.cartitems').html($cartquantity);
+//    }
+//
+//    function updateSession(){
+//        getCartLength();
+//        sessionStorage.setItem('cartQuantity', $cartquantity);
+//        sessionStorage.setItem('cartItems', JSON.stringify($cartitems));
+//    }
+//
+//    function addToCart(data){
+//        if(!data){
+//            return;
+//        }
+//        var check = true;
+//
+//        for(var i = 0; i < $cartquantity; i++){
+//            if(data.id === $cartitems[i].id){
+//                check = false;
+//                $cartitems[i].quantity = $cartitems[i].quantity + 1;
+//                break;
+//            }
+//        }
+//
+//        if(check){
+//            $cartitems.push(data);
+//            getCartLength();
+//
+//            $('.cartitems').html($cartquantity);
+//        }
+//
+//        updateSession();
+//    }
+//
+//    function removeProduct(id, that){
+//        var check;
+//        for(var i = 0; i < $cartquantity; i++){
+//            if(id === $cartitems[i].id){
+//                $cartitems.splice(i, 1);
+//                break;
+//            }
+//        }
+//
+//        that.parents('li').slideToggle().remove();
+//        getCartLength();
+//        updateTotal();
+//        updateSession();
+//        if($cartquantity === 0){
+//            updatehtml();
+//        }
+//    }
+//
+//    function updateTotal(){
+//        //Dont total if page does not have carttotal
+//        if($('#carttotal').length){
+//            $cartTotal = 0;
+//            for(var i = 0; i < $cartquantity; i++){
+//                $cartTotal += ($cartitems[i].price * $cartitems[i].quantity);
+//            }
+//            $('#carttotal').html('$ ' + $cartTotal);
+//        }
+//    }
+//
+//    function updatehtml(){
+//        var html = '';
+//        if($('#cartItems').length){
+//            for(var i = 0; i < $cartquantity; i++){
+//                html += updatetpl($cartitems[i].image, $cartitems[i].name, $cartitems[i].price, $cartitems[i].quantity, $cartitems[i].id, 1);
+//            }
+//            if(html === ''){
+//                html = '<div class="clearfix">' +
+//                        '<div class="big-content">' +
+//                          '<div class="product-cart-wrap">' +
+//                            '<h5>Sorry, you do not have any product in cart.</h5>' +
+//                          '</div></div></div>';
+//            }
+//            $('#cartItems').html(html);
+//        }
+//        else if($('#cartItemsType2').length){
+//            for(var i = 0; i < $cartquantity; i++){
+//                html += updatetpl($cartitems[i].image, $cartitems[i].name, $cartitems[i].price, $cartitems[i].quantity, $cartitems[i].id, 2);
+//            }
+//            if(html === ''){
+//                html = '<div class="clearfix">' +
+//                        '<div class="big-content">' +
+//                          '<div class="product-cart-wrap">' +
+//                            '<h5>Sorry, you do not have any product in cart.</h5>' +
+//                          '</div></div></div>';
+//            }
+//            $('#cartItemsType2').html(html);
+//        }
+//    }
 
     function updatetpl(image, name, price, quantity, id, type){
         var option = '';

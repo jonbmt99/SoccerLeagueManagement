@@ -1,7 +1,27 @@
-<form action="/register" method="POST" type="submit" onsubmit="return validate();">
-    <p>Email: <input type="email" name="email"></p>
-    <P>Password: <input type="password" name="password" id="password" required></p>
-    <p>UserName: <input type="text" name="username" required></p>
-    <p><input type="submit" value="Register"></p>
-    <a href="/signIn">Login here</a>
-</form>
+{% extends 'base/master.html' %}
+{% block body %}
+	<div class=innerbannerwrap>
+        <div class=content></div>
+        <div class=innerbanner><h2 class=bannerHeadline><span>Đăng kí</span></h2></div>
+    </div>
+	<div class="container" style="width: 50%">
+		<form action="/login" method="POST">
+			<div class="form-group">
+				<label>Email address</label>
+				<input name="email" type="email" class="form-control" id="exampleInputEmail1" required placeholder="Enter email">
+			  </div>
+			  <div class="form-group">
+				<label>Password</label>
+				<input class="form-control" type="password" name="password" id="password" required placeholder="Password">
+			  </div>
+            <div class="form-group">
+				<label>UserName</label>
+				<input class="form-control"  type="text" name="username" required placeholder="Password">
+			  </div>
+            <button class="btn btn-primary"><a style="color:black" href="/signIn">Đăng nhập</a></button>
+			<button style="color:black" type="submit" value="Register" class="btn btn-primary">Đăng kí</button>
+		</form>
+	</div>
+{% endblock %}
+
+

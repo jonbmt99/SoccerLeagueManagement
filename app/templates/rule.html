@@ -1,0 +1,20 @@
+{% extends 'base/master.html' %}
+{% block body %}
+    <div class=innerbannerwrap>
+        <div class=content></div>
+        <div class=innerbanner><h2 class=bannerHeadline><span>Điều lệ giải đấu</span></h2></div>
+    </div>
+    <div class="container">
+        <ul class="list-group" style="margin-top: 20px" class="text-center">
+          <li class="list-group-item">Số tuổi tối thiểu: <span>{{ruleList[0].min_age}} tuổi</span></li>
+          <li class="list-group-item">Số tuổi tối đa:<span>{{ruleList[0].max_age}} tuổi</span></li>
+          <li class="list-group-item">Số cầu thủ tối thiểu:<span>{{ruleList[0].min_players}} cầu thủ</span></li>
+          <li class="list-group-item">Số cầu thủ tối đa:<span>{{ruleList[0].max_players}} cầu thủ</span></li>
+            <li class="list-group-item">Số cầu thủ ngoại quốc tối đa: <span>{{ruleList[0].max_foreign_players}} cầu thủ</span></li>
+             <li class="list-group-item">Thời điểm tối đa ghi bàn: <span>{{ruleList[0].max_time_score}} phút</span></li>
+             <li class="list-group-item">Điểm chiến thắng: <span>{{ruleList[0].win_point}} điểm</span></li>
+             <li class="list-group-item">Điểm hòa: <span>{{ruleList[0].draw_point}} điểm</span></li>
+             <li class="list-group-item">Điểm thua: <span>{{ruleList[0].lose_point}} điểm</span></li>
+        </ul>
+    </div>
+{% endblock %}

@@ -25,17 +25,17 @@
                         {% if not loggedIn %}
                              <li>
                                 <div id="signInButton">
-                                    <a class="link" href="/signIn">Sign In</a>
+                                    <a class="link" href="/signIn">Đăng nhập/Đăng Kí</a>
                                 </div>
                             <li>
                         {% else %}
                         <div class="dropdown">
                             <li>
-                                <button class="dropbtn">Hello, <br>{{username}}</button>
+                                <a class="link" href="#">Xin chào {{username}}</a>
                             </li>
                             <li><a href={{ url_for("shopcart") }}><i class="fa fa-shopping-cart"></i> <span>giỏ hàng(<span
                                 class=cartitems>{{productCountinCartForGivenUser}}</span>)</span></a>
-                        </li>
+                            </li>
                             <li>
                                 <div id="signOutButton">
                                     <a class="link" href="/logout">Sign Out</a>
@@ -66,6 +66,7 @@
                                             <ul class=sub-menu>
                                                 <li><a href=gallerypage01.html>Giới thiệu VPF</a></li>
                                                 <li><a href=gallery02.html>Giới thiệu giải đấu</a></li>
+                                                <li><a href="{{ url_for('rules') }}">Điều lệ giải đấu</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="{{ url_for('teams') }}">Đội bóng <span></span> <span></span> <span></span>

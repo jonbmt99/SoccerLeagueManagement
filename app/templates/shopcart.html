@@ -1,32 +1,49 @@
+{% extends 'base/master.html' %}
+{% block body %}
+	<div class=innerbannerwrap>
+        <div class=content></div>
+        <div class=innerbanner><h2 class=bannerHeadline><span>Giỏ hàng của bạn</span></h2></div>
+    </div>
+	<section class=cartwrap>
+        <div class=cartshop>
+            <div class=bg-red></div>
+            <div class=container>
+                <div class=row>
+                    <div class=modal-body>
+                        <div class="cartHeader clearfix">
+                            <div class=header01><h4>your basket</h4></div>
+                            <div class=header02><h4><span>you have selected <span class=cartitems></span> product</span>
+                                <a href=#><i class="fa fa-cart-plus"></i> <span class=cartitems>1</span></a></h4>
 
-				<div class="wrap-table-shopping-cart bgwhite">
-					<table class="table-shopping-cart">
-						<tr class="table-head">
-							<th class="column-1"></th>
-							<th class="column-2">Product</th>
-							<th class="column-3">Price</th>
-							<th class="column-4 p-l-70">Quantity</th>
-						</tr>
-						{% for row in productsincart %}
-						<tr class="table-row">
-							<td class="column-1">
-								<div class="cart-img-product b-rad-4 o-f-hidden">
-                                    {{ row[1] }}
-								</div>
-							</td>
-							<td class="column-2">{{row[2]}}</td>
-                            <span width="20px"></span>
-							<td class="column-3">${{row[4]}}</td>
+                                <p>your order ID is 2221</p>
 
-							<td class="column-4">
-									<input class="size8 m-text18 t-center num-product" type="number" name="num-product1" value="{{row[3]}}" disabled>
-                                    <a href="/removeFromCart?productId={{row[1]}}"/>Remove Product
-							</td>
-						</tr>
-                    {% endfor %}
-					</table>
-				</div>
-                TotalSum: {{ totalsum }}
-
-                <a href="/checkoutPage"><p style="color: #d58512">CheckOut</p></a>
-			</div>
+                                <p class=datetime></p></div>
+                        </div>
+                        <div class="card-item clearfix">
+                            <div style="margin-top: 20px">
+                                <div class=big-content><h4>Tên vé</h4></div>
+                                <div class="big-content medium-content text-center"><h4>Số lượng</h4></div>
+                                <div class="big-content small-content"><h4>Đơn giá</h4></div>
+                            </div>
+                            <div>
+                                {% for product in productsincart %}
+                                    <div class=big-content><h4>{{product[2]}}</h4></div>
+                                    <div class="big-content medium-content text-center"><h4>{{product[3]}}</h4></div>
+                                    <div class="big-content small-content"><h4>{{product[4]}} VNĐ</h4></div>
+                                {% endfor %}
+                            </div>
+                            <div class="card-item cart-total clearfix">
+                                <div class="big-content medium-content text-center"><h4 style="color:red">Tổng tiền</h4></div>
+                                <div class="big-content small-content"><h4 id=carttotal style="color:red">{{totalsum}} VNĐ</h4></div>
+                            </div>
+                        </div>
+                        <div class=modal-footer>
+                            <button class=btn-red>Mua ngay</button>
+                        </div>
+                        <div class=center><a href=shopcart02.html class="btn btn-red">Lưu giỏ hàng và quay lại chọn vé</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
